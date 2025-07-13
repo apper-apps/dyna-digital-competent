@@ -1,0 +1,167 @@
+[
+  {
+    "Id": 1,
+    "appId": 1,
+    "userId": 101,
+    "userName": "Sarah Johnson",
+    "rating": 5,
+    "comment": "Absolutely fantastic! This AI content generator has revolutionized our content marketing strategy. The quality is consistently high and it saves us hours of work every week.",
+    "helpful": 23,
+    "verified": true,
+    "createdAt": "2024-03-15T14:30:00Z"
+  },
+  {
+    "Id": 2,
+    "appId": 1,
+    "userId": 102,
+    "userName": "Michael Chen",
+    "rating": 4,
+    "comment": "Great tool overall. The SEO optimization features are particularly impressive. Sometimes the tone needs minor adjustments, but the time savings are significant.",
+    "helpful": 18,
+    "verified": true,
+    "createdAt": "2024-03-10T09:15:00Z"
+  },
+  {
+    "Id": 3,
+    "appId": 2,
+    "userId": 103,
+    "userName": "Emily Rodriguez",
+    "rating": 5,
+    "comment": "SmartChat Assistant has transformed our customer service. The natural language understanding is remarkable and our response times have improved dramatically.",
+    "helpful": 31,
+    "verified": true,
+    "createdAt": "2024-03-12T16:45:00Z"
+  },
+  {
+    "Id": 4,
+    "appId": 2,
+    "userId": 104,
+    "userName": "David Park",
+    "rating": 4,
+    "comment": "Solid chatbot platform with good analytics. The integration process was smooth and the conversation flow feels natural. Pricing is reasonable for the features provided.",
+    "helpful": 15,
+    "verified": true,
+    "createdAt": "2024-03-08T11:20:00Z"
+  },
+  {
+    "Id": 5,
+    "appId": 3,
+    "userId": 105,
+    "userName": "Lisa Wang",
+    "rating": 5,
+    "comment": "DataViz Pro makes complex data beautiful and understandable. The AI insights feature often reveals patterns we wouldn't have noticed otherwise. Highly recommended!",
+    "helpful": 27,
+    "verified": true,
+    "createdAt": "2024-03-14T13:10:00Z"
+  },
+  {
+    "Id": 6,
+    "appId": 4,
+    "userId": 106,
+    "userName": "Alex Thompson",
+    "rating": 5,
+    "comment": "CodeAssist AI is a game-changer for developers. The code suggestions are incredibly accurate and the bug detection has saved me from several issues. Worth every penny!",
+    "helpful": 42,
+    "verified": true,
+    "createdAt": "2024-03-11T10:30:00Z"
+  },
+  {
+    "Id": 7,
+    "appId": 4,
+    "userId": 107,
+    "userName": "Jennifer Kim",
+    "rating": 4,
+    "comment": "Really impressed with the multi-language support. The IDE integration works seamlessly and the code completion is smart. Occasionally suggests overly complex solutions.",
+    "helpful": 19,
+    "verified": true,
+    "createdAt": "2024-03-09T15:45:00Z"
+  },
+  {
+    "Id": 8,
+    "appId": 5,
+    "userId": 108,
+    "userName": "Robert Martinez",
+    "rating": 4,
+    "comment": "VoiceTranscribe Pro delivers excellent accuracy for our podcast transcriptions. The speaker identification feature works well with clear audio. Great time saver!",
+    "helpful": 22,
+    "verified": true,
+    "createdAt": "2024-03-13T12:20:00Z"
+  },
+  {
+    "Id": 9,
+    "appId": 6,
+    "userId": 109,
+    "userName": "Amanda Foster",
+    "rating": 5,
+    "comment": "ImageEnhance AI has breathed new life into our old photo archive. The upscaling quality is remarkable and the batch processing saves so much time. Fantastic tool!",
+    "helpful": 35,
+    "verified": true,
+    "createdAt": "2024-03-16T14:55:00Z"
+  },
+  {
+    "Id": 10,
+    "appId": 7,
+    "userId": 110,
+    "userName": "Kevin Brown",
+    "rating": 4,
+    "comment": "HealthTracker AI helps me stay on top of my wellness goals. The personalized recommendations are spot-on and the wearable integration works flawlessly.",
+    "helpful": 16,
+    "verified": true,
+    "createdAt": "2024-03-07T08:40:00Z"
+  },
+  {
+    "Id": 11,
+    "appId": 8,
+    "userId": 111,
+    "userName": "Grace Liu",
+    "rating": 5,
+    "comment": "FinanceGPT has completely changed how I approach investing. The market insights are valuable and the portfolio optimization suggestions have improved my returns.",
+    "helpful": 29,
+    "verified": true,
+    "createdAt": "2024-03-17T11:15:00Z"
+  },
+  {
+    "Id": 12,
+    "appId": 9,
+    "userId": 112,
+    "userName": "Tom Wilson",
+    "rating": 5,
+    "comment": "LearnSmart AI adapts perfectly to my learning style. The progress tracking is motivating and the interactive content keeps me engaged. Best learning platform I've used!",
+    "helpful": 33,
+    "verified": true,
+    "createdAt": "2024-03-18T16:30:00Z"
+  },
+  {
+    "Id": 13,
+    "appId": 10,
+    "userId": 113,
+    "userName": "Maria Gonzalez",
+    "rating": 4,
+    "comment": "ProductivityFlow has streamlined my daily routine significantly. The smart scheduling feature is impressive and the productivity insights help me improve continuously.",
+    "helpful": 21,
+    "verified": true,
+    "createdAt": "2024-03-19T09:25:00Z"
+  },
+  {
+    "Id": 14,
+    "appId": 11,
+    "userId": 114,
+    "userName": "James Taylor",
+    "rating": 4,
+    "comment": "EmailAI Assistant manages my inbox beautifully. The priority detection is accurate and the auto-response feature handles routine emails perfectly. Great productivity boost!",
+    "helpful": 17,
+    "verified": true,
+    "createdAt": "2024-03-20T13:50:00Z"
+  },
+  {
+    "Id": 15,
+    "appId": 12,
+    "userId": 115,
+    "userName": "Rachel Adams",
+    "rating": 5,
+    "comment": "DesignGenius AI creates stunning designs quickly. The brand consistency tools ensure our marketing materials always look professional. An essential tool for our team!",
+    "helpful": 38,
+    "verified": true,
+    "createdAt": "2024-03-21T15:40:00Z"
+  }
+]
