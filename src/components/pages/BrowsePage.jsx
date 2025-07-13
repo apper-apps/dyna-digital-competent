@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import FilterSidebar from "@/components/molecules/FilterSidebar";
-import AppGrid from "@/components/organisms/AppGrid";
-import SearchBar from "@/components/molecules/SearchBar";
-import Button from "@/components/atoms/Button";
 import ApperIcon from "@/components/ApperIcon";
+import AppGrid from "@/components/organisms/AppGrid";
+import Button from "@/components/atoms/Button";
+import FilterSidebar from "@/components/molecules/FilterSidebar";
+import SearchBar from "@/components/molecules/SearchBar";
 import { categoriesData } from "@/services/mockData/categories";
-
 const BrowsePage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [filters, setFilters] = useState({
@@ -74,16 +73,16 @@ const BrowsePage = () => {
     (filters.rating ? 1 : 0) +
     (filters.features?.length || 0);
 
-  return (
-    <div className="min-h-screen bg-surface-900">
+return (
+    <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Browse <span className="gradient-text">AI Applications</span>
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Browse <span className="gradient-text">Super Applications</span>
           </h1>
-          <p className="text-surface-400 text-lg max-w-2xl">
-            Discover innovative AI tools and solutions from verified vendors. Filter by category, price, rating, and features to find exactly what you need.
+          <p className="text-gray-600 text-lg max-w-2xl">
+            Discover innovative tools and solutions from verified vendors. Filter by category, price, rating, and features to find exactly what you need.
           </p>
         </div>
 
@@ -127,72 +126,72 @@ const BrowsePage = () => {
               </Button>
             </div>
 
-            {/* Active Filters */}
+{/* Active Filters */}
             {activeFilterCount > 0 && (
-              <div className="mb-6 p-4 bg-surface-800 rounded-lg border border-surface-700">
+              <div className="mb-6 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-white font-medium">Active Filters</h3>
+                  <h3 className="text-gray-900 font-medium">Active Filters</h3>
                   <Button
                     variant="ghost"
                     size="sm"
                     onClick={clearFilters}
-                    className="text-surface-400 hover:text-white"
+                    className="text-gray-600 hover:text-gray-900"
                   >
                     Clear All
                   </Button>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {filters.categories?.map(category => (
-                    <span
+<span
                       key={category}
-                      className="inline-flex items-center space-x-1 bg-primary-600/20 text-primary-300 px-3 py-1 rounded-full text-sm"
+                      className="inline-flex items-center space-x-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200"
                     >
                       <span>{category}</span>
                       <button
-                        onClick={() => handleFilterChange({
+onClick={() => handleFilterChange({
                           ...filters,
                           categories: filters.categories.filter(c => c !== category)
                         })}
-                        className="hover:text-white"
+                        className="hover:text-blue-900"
                       >
                         <ApperIcon name="X" size={14} />
                       </button>
                     </span>
                   ))}
-                  {filters.priceRange && (
-                    <span className="inline-flex items-center space-x-1 bg-primary-600/20 text-primary-300 px-3 py-1 rounded-full text-sm">
+{filters.priceRange && (
+                    <span className="inline-flex items-center space-x-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
                       <span>Price: {filters.priceRange}</span>
                       <button
                         onClick={() => handleFilterChange({ ...filters, priceRange: "" })}
-                        className="hover:text-white"
+className="hover:text-blue-900"
                       >
                         <ApperIcon name="X" size={14} />
                       </button>
                     </span>
                   )}
                   {filters.rating && (
-                    <span className="inline-flex items-center space-x-1 bg-primary-600/20 text-primary-300 px-3 py-1 rounded-full text-sm">
+                    <span className="inline-flex items-center space-x-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200">
                       <span>{filters.rating}+ stars</span>
-                      <button
+<button
                         onClick={() => handleFilterChange({ ...filters, rating: null })}
-                        className="hover:text-white"
+                        className="hover:text-blue-900"
                       >
                         <ApperIcon name="X" size={14} />
                       </button>
                     </span>
                   )}
                   {filters.features?.map(feature => (
-                    <span
+<span
                       key={feature}
-                      className="inline-flex items-center space-x-1 bg-primary-600/20 text-primary-300 px-3 py-1 rounded-full text-sm"
+                      className="inline-flex items-center space-x-1 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm border border-blue-200"
                     >
                       <span>{feature}</span>
-                      <button
+<button
                         onClick={() => handleFilterChange({
                           ...filters,
                           features: filters.features.filter(f => f !== feature)
                         })}
-                        className="hover:text-white"
+                        className="hover:text-blue-900"
                       >
                         <ApperIcon name="X" size={14} />
                       </button>

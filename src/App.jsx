@@ -1,10 +1,16 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Route, Router, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import Header from "@/components/organisms/Header";
+import VendorPage from "@/components/pages/VendorPage";
+import PricingPage from "@/components/pages/PricingPage";
+import SupportPage from "@/components/pages/SupportPage";
+import CartPage from "@/components/pages/CartPage";
+import CheckoutPage from "@/components/pages/CheckoutPage";
+import React from "react";
 import Footer from "@/components/organisms/Footer";
+import Header from "@/components/organisms/Header";
+import AppDetailPage from "@/components/pages/AppDetailPage";
 import Homepage from "@/components/pages/Homepage";
 import BrowsePage from "@/components/pages/BrowsePage";
-import AppDetailPage from "@/components/pages/AppDetailPage";
 
 function App() {
 return (
@@ -12,16 +18,16 @@ return (
       <div className="min-h-screen bg-white flex flex-col">
         <Header />
         <main className="flex-1">
-          <Routes>
+<Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/browse" element={<BrowsePage />} />
             <Route path="/app/:id" element={<AppDetailPage />} />
             <Route path="/categories" element={<BrowsePage />} />
-            <Route path="/vendor" element={<Homepage />} />
-            <Route path="/pricing" element={<Homepage />} />
-            <Route path="/support" element={<Homepage />} />
-            <Route path="/cart" element={<Homepage />} />
-            <Route path="/checkout" element={<Homepage />} />
+            <Route path="/vendor" element={<VendorPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/support" element={<SupportPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
           </Routes>
         </main>
         <Footer />

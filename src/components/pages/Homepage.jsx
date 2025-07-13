@@ -18,27 +18,26 @@ const Homepage = () => {
     { label: "Happy Users", value: "10K+", icon: "Users" },
     { label: "Categories", value: "8", icon: "Grid3X3" }
   ];
-
-  const testimonials = [
+const testimonials = [
     {
       name: "Sarah Chen",
       role: "Product Manager",
-      company: "TechCorp",
-      content: "AI Hub helped us discover the perfect automation tools for our workflow. The quality and variety of applications is outstanding.",
+      company: "Slack Technologies",
+      content: "Navigator helped us discover the perfect automation tools for our workflow. Found amazing productivity apps like Notion, Asana, and Zapier all in one place.",
       avatar: "S"
     },
     {
-      name: "Michael Rodriguez",
+      name: "Michael Rodriguez", 
       role: "Founder",
-      company: "StartupXYZ",
-      content: "As a startup, we needed cost-effective AI solutions. AI Hub's marketplace made it easy to find exactly what we needed within our budget.",
+      company: "Stripe",
+      content: "As a startup, we needed cost-effective solutions. Navigator's marketplace made it easy to find tools like Figma, Linear, and Discord within our budget.",
       avatar: "M"
     },
     {
       name: "Dr. Emily Watson",
-      role: "Data Scientist",
-      company: "Research Labs",
-      content: "The developer tools section on AI Hub is incredible. Found multiple APIs that integrated seamlessly with our existing systems.",
+      role: "Data Scientist", 
+      company: "OpenAI",
+      content: "The developer tools section is incredible. Found APIs like GitHub Copilot, Vercel, and Supabase that integrated seamlessly with our systems.",
       avatar: "E"
     }
   ];
@@ -62,19 +61,19 @@ const Homepage = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed"
           >
-            Super Apps that Upgrade You!
+            Featuring apps like Slack, Notion, Figma, GitHub, Discord, and hundreds more
           </motion.p>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            The ultimate marketplace for innovative tools and solutions. Find, purchase, and manage cutting-edge applications from verified vendors.
+            The ultimate marketplace for productivity, development, design, and business tools. Discover apps from leading companies like Microsoft, Google, Adobe, and emerging startups.
           </motion.p>
 
           <motion.div

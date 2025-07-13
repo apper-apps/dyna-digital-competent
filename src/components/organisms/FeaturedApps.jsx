@@ -59,12 +59,12 @@ const FeaturedApps = () => {
   return (
 <section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+<div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Featured <span className="gradient-text">Super Apps</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Discover the most popular and innovative tools trusted by thousands of users worldwide
+            From Slack and Notion to Figma and GitHub - discover the tools that power modern teams
           </p>
         </div>
 
@@ -143,10 +143,14 @@ const FeaturedApps = () => {
 
 {/* App Screenshot/Image */}
               <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center shadow-inner">
-                  <ApperIcon name="Image" size={64} className="text-gray-400" />
+                <div className="aspect-video bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl flex flex-col items-center justify-center shadow-inner border border-gray-200">
+                  <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg">
+                    <ApperIcon name="Zap" size={40} className="text-white" />
+                  </div>
+                  <h3 className="text-gray-700 font-semibold text-lg">{currentApp.name}</h3>
+                  <p className="text-gray-500 text-sm mt-1">Interactive Preview</p>
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent rounded-xl"></div>
               </div>
             </div>
           </motion.div>
@@ -163,13 +167,15 @@ const FeaturedApps = () => {
               <span>Previous</span>
             </Button>
 
-<div className="flex space-x-2">
+<div className="flex space-x-3">
               {apps.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
+                  className={`w-4 h-4 rounded-full transition-all duration-300 shadow-sm ${
+                    index === currentIndex 
+                      ? 'bg-blue-500 ring-2 ring-blue-200 scale-110' 
+                      : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
               ))}

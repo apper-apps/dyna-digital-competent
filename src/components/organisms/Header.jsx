@@ -37,9 +37,8 @@ const Header = () => {
             <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
               <ApperIcon name="Zap" size={24} className="text-white" />
             </div>
-            <div>
+<div>
               <h1 className="text-xl font-bold gradient-text">Navigator</h1>
-              <p className="text-xs text-gray-600 hidden sm:block font-medium">Super Apps that Upgrade You!</p>
             </div>
           </Link>
 

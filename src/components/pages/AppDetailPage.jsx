@@ -239,21 +239,21 @@ className={`flex items-center space-x-2 py-4 px-4 border-b-2 font-medium text-sm
                 </Card>
               </div>
 
-              <div className="space-y-6">
-                <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Vendor Information</h3>
+<div className="space-y-6">
+                <Card className="p-6 bg-white border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Vendor Information</h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
                         <ApperIcon name="Building" size={20} className="text-white" />
                       </div>
                       <div>
-                        <h4 className="font-medium text-white">{app.vendor}</h4>
-                        <p className="text-surface-400 text-sm">Verified Vendor</p>
+                        <h4 className="font-medium text-gray-900">{app.vendor}</h4>
+                        <p className="text-gray-600 text-sm">Verified Vendor</p>
                       </div>
                     </div>
-                    <p className="text-surface-300 text-sm">
-                      A trusted provider of innovative AI solutions with a track record of delivering high-quality applications.
+<p className="text-gray-700 text-sm">
+                      A trusted provider of innovative solutions with a track record of delivering high-quality applications.
                     </p>
                     <Button variant="outline" size="sm" className="w-full">
                       View Vendor Profile
@@ -261,22 +261,22 @@ className={`flex items-center space-x-2 py-4 px-4 border-b-2 font-medium text-sm
                   </div>
                 </Card>
 
-                <Card className="p-6">
-                  <h3 className="text-lg font-semibold text-white mb-4">Support & Resources</h3>
+<Card className="p-6 bg-white border-gray-200">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Support & Resources</h3>
                   <div className="space-y-3">
-                    <a href="#" className="flex items-center space-x-3 text-surface-300 hover:text-white transition-colors duration-200">
+                    <a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                       <ApperIcon name="FileText" size={16} />
                       <span>Documentation</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-3 text-surface-300 hover:text-white transition-colors duration-200">
+                    <a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                       <ApperIcon name="Code" size={16} />
                       <span>API Reference</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-3 text-surface-300 hover:text-white transition-colors duration-200">
+<a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                       <ApperIcon name="MessageCircle" size={16} />
                       <span>Community Forum</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-3 text-surface-300 hover:text-white transition-colors duration-200">
+                    <a href="#" className="flex items-center space-x-3 text-gray-700 hover:text-blue-600 transition-colors duration-200">
                       <ApperIcon name="Mail" size={16} />
                       <span>Support Email</span>
                     </a>
@@ -382,9 +382,9 @@ className={`w-full ${selectedPlan === index ? 'bg-blue-600' : ''}`}
                               {[...Array(5)].map((_, i) => (
                                 <ApperIcon
                                   key={i}
-                                  name="Star"
+name="Star"
                                   size={14}
-                                  className={`${i < review.rating ? 'text-yellow-400 fill-current' : 'text-surface-600'}`}
+                                  className={`${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                                 />
                               ))}
                             </div>
