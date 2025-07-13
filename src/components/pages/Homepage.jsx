@@ -69,13 +69,14 @@ className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 trackin
             Featuring AI-powered apps like ChatGPT, Midjourney, Notion AI, GitHub Copilot, and hundreds more intelligent tools
           </motion.p>
           
-          <motion.p
+<motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             The premier marketplace connecting you with cutting-edge AI applications. Explore automation, creativity, productivity, and business intelligence tools from industry leaders and innovative startups.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
