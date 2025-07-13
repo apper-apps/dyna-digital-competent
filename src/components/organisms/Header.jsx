@@ -27,16 +27,16 @@ return (
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-40 bg-gradient-to-r from-white/95 via-blue-50/95 to-purple-50/95 backdrop-blur-sm border-b border-gray-200/50 shadow-lg modern-shadow"
+className="sticky top-0 z-40 bg-gradient-to-r from-white/95 via-blue-50/95 to-purple-50/95 backdrop-blur-lg border-b border-gray-200/50 shadow-xl modern-shadow-lg"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-18">
+        <div className="flex items-center justify-between h-20 py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 hover-lift">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 flex items-center justify-center shadow-lg modern-shadow-lg">
-              <ApperIcon name="Zap" size={26} className="text-white" />
+          <Link to="/" className="flex items-center space-x-3 hover-lift p-2 rounded-xl transition-all duration-300">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-500 via-blue-600 to-purple-600 flex items-center justify-center shadow-lg modern-shadow-lg hover:shadow-xl transition-all duration-300">
+              <ApperIcon name="Zap" size={26} className="text-white drop-shadow-lg" />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <h1 className="text-2xl font-bold gradient-text text-shadow">Navigator</h1>
               <p className="text-xs text-gray-600 font-medium">Super Apps Platform</p>
             </div>

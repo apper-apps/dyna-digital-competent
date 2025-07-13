@@ -90,7 +90,7 @@ const AppCard = ({ app, onAddToCart }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4 }}
     >
-<Card hoverable className="group h-full flex flex-col bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-gray-300/60 transition-all duration-300 overflow-hidden">
+<Card hoverable className="group h-[420px] w-full flex flex-col bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-gray-300/60 transition-all duration-300 overflow-hidden">
         {/* Header Section */}
         <div className="p-4 sm:p-5">
           <div className="flex items-start gap-3 sm:gap-4 mb-3">
@@ -100,7 +100,7 @@ const AppCard = ({ app, onAddToCart }) => {
             
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2 mb-1">
-                <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight break-words hyphens-auto line-clamp-2">
+                <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight break-words hyphens-auto line-clamp-2 overflow-hidden">
                   {app.name}
                 </h3>
                 {app.featured && (
@@ -115,11 +115,10 @@ const AppCard = ({ app, onAddToCart }) => {
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed line-clamp-3 mb-4">
+{/* Description */}
+          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed line-clamp-2 mb-4 overflow-hidden">
             {app.description}
           </p>
-
           {/* Rating */}
           <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-1">
@@ -132,19 +131,7 @@ const AppCard = ({ app, onAddToCart }) => {
               ({app.reviewCount} reviews)
             </span>
           </div>
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            <Badge variant="default" className="text-xs px-2 py-1">
-              {app.category}
-            </Badge>
-            {app.tags.slice(0, 2).map((tag, index) => (
-              <Badge key={index} variant="default" className="text-xs px-2 py-1 max-w-24 sm:max-w-none truncate">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-        </div>
+</div>
 
         {/* Footer Section */}
         <div className="mt-auto p-4 sm:p-5 pt-0 border-t border-gray-100/80">

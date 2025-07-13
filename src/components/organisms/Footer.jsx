@@ -37,11 +37,11 @@ const Footer = () => {
   ];
 
 return (
-    <footer className="bg-gray-50 border-t border-gray-200 mt-20">
+<footer className="bg-gray-50 border-t border-gray-200 mt-20">
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo and Description */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
                 <ApperIcon name="Zap" size={24} className="text-white" />

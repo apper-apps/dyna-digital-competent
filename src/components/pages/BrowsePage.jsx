@@ -84,17 +84,7 @@ return (
           <p className="text-gray-600 text-lg max-w-2xl leading-relaxed">
             Discover innovative AI-powered tools and intelligent solutions from verified vendors. Filter by category, features, and ratings to find the perfect applications for your needs.
           </p>
-        </div>
-
-        {/* Search Bar */}
-        <div className="mb-8">
-<SearchBar 
-            onSearch={handleSearch}
-            placeholder="Search AI applications, vendors, or capabilities..."
-            className="max-w-2xl"
-          />
-        </div>
-
+</div>
         <div className="flex gap-8">
           {/* Desktop Filter Sidebar */}
           <div className="hidden lg:block w-80 flex-shrink-0">
