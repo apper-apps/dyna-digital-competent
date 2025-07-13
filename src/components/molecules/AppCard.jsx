@@ -90,74 +90,92 @@ const AppCard = ({ app, onAddToCart }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4 }}
     >
-<Card hoverable className="p-4 sm:p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300">
-        <div className="flex items-start space-x-3 sm:space-x-4 mb-4">
-          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} hover:scale-105 transition-transform duration-200`}>
-            <ApperIcon name={logoConfig.icon} size={22} className="text-white drop-shadow-sm sm:w-6 sm:h-6" />
+<Card hoverable className="group h-full flex flex-col bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-gray-300/60 transition-all duration-300 overflow-hidden">
+        {/* Header Section */}
+        <div className="p-4 sm:p-5">
+          <div className="flex items-start gap-3 sm:gap-4 mb-3">
+            <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} group-hover:scale-105 transition-transform duration-200`}>
+              <ApperIcon name={logoConfig.icon} size={20} className="text-white drop-shadow-sm sm:w-6 sm:h-6" />
+            </div>
+            
+            <div className="flex-1 min-w-0">
+              <div className="flex items-start justify-between gap-2 mb-1">
+                <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight break-words hyphens-auto line-clamp-2">
+                  {app.name}
+                </h3>
+                {app.featured && (
+                  <Badge variant="primary" className="text-xs flex-shrink-0 ml-2">
+                    Featured
+                  </Badge>
+                )}
+              </div>
+              <p className="text-gray-600 text-xs sm:text-sm font-medium truncate">
+                {app.vendor}
+              </p>
+            </div>
           </div>
-          <div className="flex-1 min-w-0 pr-2">
-            <h3 className="font-semibold text-gray-900 text-base sm:text-lg leading-tight mb-1 break-words hyphens-auto">{app.name}</h3>
-            <p className="text-gray-600 text-xs sm:text-sm font-medium truncate">{app.vendor}</p>
-          </div>
-          {app.featured && (
-            <Badge variant="primary" className="text-xs flex-shrink-0">
-              Featured
-            </Badge>
-          )}
-        </div>
 
-        <p className="text-gray-700 text-xs sm:text-sm mb-4 flex-1 line-clamp-3 leading-relaxed">
-          {app.description}
-        </p>
+          {/* Description */}
+          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed line-clamp-3 mb-4">
+            {app.description}
+          </p>
 
-        <div className="flex items-center space-x-2 mb-4 text-xs sm:text-sm">
-          <div className="flex items-center space-x-1">
-            <ApperIcon name="Star" size={14} className={`fill-current ${getRatingColor(app.rating)} sm:w-4 sm:h-4`} />
-            <span className={`font-medium ${getRatingColor(app.rating)}`}>
-              {app.rating}
-            </span>
-          </div>
-          <span className="text-gray-500 truncate">
-            ({app.reviewCount} reviews)
-          </span>
-        </div>
-
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
-          <Badge variant="default" className="text-xs flex-shrink-0">
-            {app.category}
-          </Badge>
-          {app.tags.slice(0, 2).map((tag, index) => (
-            <Badge key={index} variant="default" className="text-xs flex-shrink-0 max-w-20 sm:max-w-none truncate">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
-          <div className="flex flex-col">
-            <span className="text-base sm:text-lg font-bold text-gray-900">
-              {formatPrice(app.pricing[0]?.price || 0)}
-            </span>
-            {app.pricing.length > 1 && (
-              <span className="text-xs text-gray-500">
-                Starting price
+          {/* Rating */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-1">
+              <ApperIcon name="Star" size={14} className={`fill-current ${getRatingColor(app.rating)}`} />
+              <span className={`text-xs sm:text-sm font-medium ${getRatingColor(app.rating)}`}>
+                {app.rating}
               </span>
-            )}
+            </div>
+            <span className="text-gray-500 text-xs sm:text-sm">
+              ({app.reviewCount} reviews)
+            </span>
           </div>
-          <div className="flex space-x-2">
-            <Link to={`/app/${app.Id}`}>
-              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50 min-h-[36px] px-3">
-                <ApperIcon name="Eye" size={14} className="mr-1 sm:mr-1.5" />
-                <span className="text-xs sm:text-sm">View</span>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            <Badge variant="default" className="text-xs px-2 py-1">
+              {app.category}
+            </Badge>
+            {app.tags.slice(0, 2).map((tag, index) => (
+              <Badge key={index} variant="default" className="text-xs px-2 py-1 max-w-24 sm:max-w-none truncate">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer Section */}
+        <div className="mt-auto p-4 sm:p-5 pt-0 border-t border-gray-100/80">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <div className="flex flex-col">
+              <span className="text-base sm:text-lg font-bold text-gray-900">
+                {formatPrice(app.pricing[0]?.price || 0)}
+              </span>
+              {app.pricing.length > 1 && (
+                <span className="text-xs text-gray-500">
+                  Starting price
+                </span>
+              )}
+            </div>
+            
+            <div className="flex gap-2">
+              <Link to={`/app/${app.Id}`} className="flex-1 sm:flex-initial">
+                <Button variant="ghost" size="sm" className="w-full sm:w-auto text-gray-600 hover:text-blue-600 hover:bg-blue-50 px-3 py-2">
+                  <ApperIcon name="Eye" size={14} className="mr-1.5" />
+                  <span className="text-xs sm:text-sm">View</span>
+                </Button>
+              </Link>
+              <Button 
+                size="sm"
+                onClick={() => onAddToCart(app)}
+                className="flex-1 sm:flex-initial px-3 py-2"
+              >
+                <ApperIcon name="Plus" size={14} className="mr-1.5" />
+                <span className="text-xs sm:text-sm">Add</span>
               </Button>
-            </Link>
-            <Button 
-              size="sm"
-              onClick={() => onAddToCart(app)}
-              className="min-h-[36px] px-3"
-            >
-              <ApperIcon name="Plus" size={14} className="mr-1 sm:mr-1.5" />
-              <span className="text-xs sm:text-sm">Add</span>
-            </Button>
+            </div>
           </div>
         </div>
       </Card>
