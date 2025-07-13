@@ -56,26 +56,51 @@ className="sticky top-0 z-40 bg-gradient-to-r from-white/95 via-blue-50/95 to-pu
           </nav>
 
 {/* Right Side Actions */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             {/* Search Icon */}
             <Button
               variant="ghost"
               size="sm"
-              onClick={() => navigate("/browse")}
+              onClick={() => {
+                navigate("/browse");
+                // Focus search after navigation
+                setTimeout(() => {
+                  const searchInput = document.querySelector('input[type="search"], input[placeholder*="search" i]');
+                  if (searchInput) searchInput.focus();
+                }, 100);
+              }}
               className="hidden sm:flex text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-xl transition-all duration-300 hover-lift"
+              title="Search Applications"
             >
               <ApperIcon name="Search" size={20} />
             </Button>
 
-            {/* User Menu */}
+            {/* Auth Buttons */}
+            <div className="hidden sm:flex items-center space-x-2">
+              <Button 
+                variant="ghost" 
+                size="sm" 
+                className="text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-xl transition-all duration-300 hover-lift px-3 py-2"
+              >
+                <span className="text-sm font-medium">Sign In</span>
+              </Button>
+              <Button 
+                variant="primary" 
+                size="sm" 
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl transition-all duration-300 hover-lift px-3 py-2"
+              >
+                <span className="text-sm font-medium">Sign Up</span>
+              </Button>
+            </div>
+
+            {/* Mobile User Menu */}
             <Button 
               variant="ghost" 
               size="sm" 
-              className="text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-xl transition-all duration-300 hover-lift"
+              className="sm:hidden text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 rounded-xl transition-all duration-300 hover-lift"
             >
               <ApperIcon name="User" size={20} />
             </Button>
-
 {/* Mobile Menu Toggle */}
             <Button
               variant="ghost"
@@ -96,7 +121,7 @@ className="sticky top-0 z-40 bg-gradient-to-r from-white/95 via-blue-50/95 to-pu
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden border-t border-gray-200/50 py-4 bg-gradient-to-r from-blue-50/80 to-purple-50/80 backdrop-blur-sm"
           >
-            <nav className="space-y-2">
+<nav className="space-y-2">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -107,6 +132,22 @@ className="sticky top-0 z-40 bg-gradient-to-r from-white/95 via-blue-50/95 to-pu
                   {item.name}
                 </Link>
               ))}
+              <div className="flex flex-col space-y-2 px-2 pt-2 border-t border-gray-200/50">
+                <Button 
+                  variant="ghost" 
+                  className="justify-start text-gray-700 hover:text-blue-600 hover:bg-gradient-to-r hover:from-blue-100 hover:to-purple-100 rounded-xl transition-all duration-300 font-semibold"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  variant="primary" 
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl transition-all duration-300"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Sign Up
+                </Button>
+              </div>
             </nav>
           </motion.div>
         )}

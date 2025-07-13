@@ -92,15 +92,15 @@ const AppCard = ({ app, onAddToCart }) => {
     >
 <Card hoverable className="group h-[420px] w-full flex flex-col bg-white border border-gray-200/80 shadow-sm hover:shadow-lg hover:border-gray-300/60 transition-all duration-300 overflow-hidden">
         {/* Header Section */}
-        <div className="p-4 sm:p-5">
-          <div className="flex items-start gap-3 sm:gap-4 mb-3">
+        <div className="p-3 sm:p-4">
+          <div className="flex items-start gap-3 sm:gap-4 mb-2">
             <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} group-hover:scale-105 transition-transform duration-200`}>
               <ApperIcon name={logoConfig.icon} size={20} className="text-white drop-shadow-sm sm:w-6 sm:h-6" />
             </div>
             
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2 mb-1">
-                <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight break-words hyphens-auto line-clamp-2 overflow-hidden">
+                <h3 className="font-semibold text-gray-900 text-sm sm:text-base lg:text-lg leading-tight break-words hyphens-auto line-clamp-2 overflow-hidden w-full">
                   {app.name}
                 </h3>
                 {app.featured && (
@@ -116,11 +116,11 @@ const AppCard = ({ app, onAddToCart }) => {
           </div>
 
 {/* Description */}
-          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed line-clamp-2 mb-4 overflow-hidden">
+          <p className="text-gray-700 text-xs sm:text-sm leading-relaxed line-clamp-2 mb-3 overflow-hidden">
             {app.description}
           </p>
           {/* Rating */}
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-2 mb-3">
             <div className="flex items-center gap-1">
               <ApperIcon name="Star" size={14} className={`fill-current ${getRatingColor(app.rating)}`} />
               <span className={`text-xs sm:text-sm font-medium ${getRatingColor(app.rating)}`}>
@@ -147,20 +147,14 @@ const AppCard = ({ app, onAddToCart }) => {
               )}
             </div>
             
-            <div className="flex gap-2">
-              <Link to={`/app/${app.Id}`} className="flex-1 sm:flex-initial">
-                <Button variant="ghost" size="sm" className="w-full sm:w-auto text-gray-600 hover:text-blue-600 hover:bg-blue-50 px-3 py-2">
-                  <ApperIcon name="Eye" size={14} className="mr-1.5" />
-                  <span className="text-xs sm:text-sm">View</span>
-                </Button>
-              </Link>
+<div className="flex justify-end">
               <Button 
                 size="sm"
                 onClick={() => onAddToCart(app)}
-                className="flex-1 sm:flex-initial px-3 py-2"
+                className="px-4 py-2 w-full sm:w-auto"
               >
                 <ApperIcon name="Plus" size={14} className="mr-1.5" />
-                <span className="text-xs sm:text-sm">Add</span>
+                <span className="text-xs sm:text-sm">Add to Cart</span>
               </Button>
             </div>
           </div>

@@ -120,15 +120,7 @@ return (
             {activeFilterCount > 0 && (
               <div className="mb-6 p-4 bg-white rounded-lg border border-gray-200 shadow-sm">
                 <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-gray-900 font-medium">Active Filters</h3>
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={clearFilters}
-                    className="text-gray-600 hover:text-gray-900"
-                  >
-                    Clear All
-                  </Button>
+                  <h3 className="text-gray-900 font-medium">Active Filters ({activeFilterCount})</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {filters.categories?.map(category => (
@@ -191,8 +183,73 @@ className="hover:text-blue-900"
               </div>
             )}
 
-            {/* App Grid */}
+{/* App Grid */}
             <AppGrid filters={filters} searchQuery={searchQuery} />
+
+            {/* AI Applications Showcase */}
+            <div className="mt-16 mb-8">
+              <div className="text-center mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                  Discover the Power of <span className="gradient-text">AI Applications</span>
+                </h2>
+                <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+                  Transform your workflow with intelligent automation, advanced analytics, and cutting-edge AI solutions. 
+                  From creative content generation to business process optimization, find the perfect AI-powered tools for every need.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl border border-blue-200/50">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4">
+                    <ApperIcon name="Zap" size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">AI Automation</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Streamline repetitive tasks with intelligent automation tools that learn and adapt to your workflow patterns.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl border border-purple-200/50">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-violet-600 rounded-lg flex items-center justify-center mb-4">
+                    <ApperIcon name="Brain" size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Smart Analytics</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Unlock insights from your data with advanced AI analytics that reveal patterns and predict trends.
+                  </p>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl border border-green-200/50">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-4">
+                    <ApperIcon name="Sparkles" size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Creative AI</h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    Generate compelling content, designs, and creative assets with state-of-the-art AI creative tools.
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center mt-12">
+                <p className="text-gray-500 text-sm mb-4">
+                  Join thousands of professionals already transforming their work with AI
+                </p>
+                <div className="flex items-center justify-center space-x-8 text-gray-400">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-900">500+</div>
+                    <div className="text-xs">AI Applications</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-900">50k+</div>
+                    <div className="text-xs">Active Users</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-gray-900">98%</div>
+                    <div className="text-xs">Satisfaction Rate</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
