@@ -24,32 +24,32 @@ const Header = () => {
   ];
 
   return (
-    <motion.header
+<motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-40 bg-surface-900/95 backdrop-blur-sm border-b border-surface-700"
+      className="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center shadow-md">
               <ApperIcon name="Zap" size={24} className="text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold gradient-text">AI Hub</h1>
-              <p className="text-xs text-surface-400 hidden sm:block">AI App Marketplace</p>
+              <h1 className="text-xl font-bold gradient-text">Navigator</h1>
+              <p className="text-xs text-gray-600 hidden sm:block font-medium">Super Apps that Upgrade You!</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
+{navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-surface-300 hover:text-white transition-colors duration-200 font-medium"
+                className="text-gray-600 hover:text-blue-600 transition-colors duration-200 font-medium px-3 py-2 rounded-lg hover:bg-blue-50"
               >
                 {item.name}
               </Link>
@@ -59,22 +59,22 @@ const Header = () => {
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             {/* Search Icon */}
-            <Button
+<Button
               variant="ghost"
               size="sm"
               onClick={() => navigate("/browse")}
-              className="hidden sm:flex"
+              className="hidden sm:flex text-gray-600 hover:text-blue-600 hover:bg-blue-50"
             >
               <ApperIcon name="Search" size={20} />
             </Button>
 
             {/* Cart */}
             <div className="relative">
-              <Button
+<Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setIsCartOpen(!isCartOpen)}
-                className="relative"
+                className="relative text-gray-600 hover:text-blue-600 hover:bg-blue-50"
               >
                 <ApperIcon name="ShoppingCart" size={20} />
                 {cartItemCount > 0 && (
@@ -96,16 +96,16 @@ const Header = () => {
             </div>
 
             {/* User Menu */}
-            <Button variant="ghost" size="sm">
+<Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50">
               <ApperIcon name="User" size={20} />
             </Button>
 
             {/* Mobile Menu Toggle */}
-            <Button
+<Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden"
+              className="lg:hidden text-gray-600 hover:text-blue-600 hover:bg-blue-50"
             >
               <ApperIcon name={isMobileMenuOpen ? "X" : "Menu"} size={20} />
             </Button>
@@ -118,7 +118,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-surface-700 py-4"
+className="lg:hidden border-t border-gray-200 py-4 bg-gray-50"
           >
             <nav className="space-y-2">
               {navigation.map((item) => (
@@ -126,7 +126,7 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-4 py-2 text-surface-300 hover:text-white hover:bg-surface-800 rounded-lg transition-colors duration-200"
+                  className="block px-4 py-3 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>

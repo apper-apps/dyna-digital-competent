@@ -7,9 +7,9 @@ import BrowsePage from "@/components/pages/BrowsePage";
 import AppDetailPage from "@/components/pages/AppDetailPage";
 
 function App() {
-  return (
+return (
     <Router>
-      <div className="min-h-screen bg-surface-900 flex flex-col">
+      <div className="min-h-screen bg-white flex flex-col">
         <Header />
         <main className="flex-1">
           <Routes>
@@ -35,7 +35,7 @@ function App() {
           pauseOnFocusLoss
           draggable
           pauseOnHover
-          theme="dark"
+          theme="light"
           className="z-[9999]"
         />
       </div>

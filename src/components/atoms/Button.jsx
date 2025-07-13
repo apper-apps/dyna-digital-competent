@@ -13,11 +13,11 @@ const Button = React.forwardRef(({
   const baseClasses = "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-surface-900 disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variants = {
-    primary: "bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white focus:ring-primary-500 shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
-    secondary: "bg-surface-800 hover:bg-surface-700 text-white border border-surface-700 hover:border-surface-600 focus:ring-surface-500",
-    ghost: "text-surface-300 hover:text-white hover:bg-surface-800 focus:ring-surface-500",
-    success: "bg-gradient-to-r from-success-600 to-success-700 hover:from-success-700 hover:to-success-800 text-white focus:ring-success-500 shadow-lg hover:shadow-xl",
-    outline: "border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white focus:ring-primary-500"
+primary: "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white focus:ring-blue-500 shadow-lg hover:shadow-xl transform hover:scale-[1.02]",
+    secondary: "bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300 hover:border-gray-400 focus:ring-gray-500",
+    ghost: "text-gray-600 hover:text-blue-600 hover:bg-blue-50 focus:ring-blue-500",
+    success: "bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white focus:ring-green-500 shadow-lg hover:shadow-xl",
+    outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white focus:ring-blue-500"
   };
   
   const sizes = {

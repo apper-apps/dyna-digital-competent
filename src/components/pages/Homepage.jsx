@@ -44,28 +44,37 @@ const Homepage = () => {
   ];
 
   return (
-    <div className="space-y-20">
+<div className="space-y-20">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-900/20 to-surface-900"></div>
+      <section className="relative py-20 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-purple-100/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8"
           >
-            Discover the Future of{" "}
-            <span className="gradient-text">AI Applications</span>
+            Discover Amazing{" "}
+            <span className="gradient-text">Super Apps</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-surface-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed"
           >
-            The ultimate marketplace for AI-powered tools and solutions. Find, purchase, and manage cutting-edge applications from verified vendors.
+            Super Apps that Upgrade You!
+          </motion.p>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+          >
+            The ultimate marketplace for innovative tools and solutions. Find, purchase, and manage cutting-edge applications from verified vendors.
           </motion.p>
 
           <motion.div
@@ -100,7 +109,7 @@ const Homepage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16">
+<section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -111,13 +120,13 @@ const Homepage = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <ApperIcon name={stat.icon} size={32} className="text-white" />
                 </div>
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
                   {stat.value}
                 </div>
-                <div className="text-surface-400 font-medium">
+                <div className="text-gray-600 font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -130,18 +139,18 @@ const Homepage = () => {
       <FeaturedApps />
 
       {/* Categories Section */}
-      <section className="py-16">
+<section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Explore <span className="gradient-text">Categories</span>
             </h2>
-            <p className="text-surface-400 text-lg max-w-2xl mx-auto">
-              Browse AI applications by category to find the perfect tools for your specific needs
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Browse applications by category to find the perfect tools for your specific needs
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {categoriesData.slice(0, 8).map((category, index) => (
               <CategoryCard key={category.name} category={category} index={index} />
             ))}
@@ -159,36 +168,36 @@ const Homepage = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-surface-800/50">
+<section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               What Our <span className="gradient-text">Users Say</span>
             </h2>
-            <p className="text-surface-400 text-lg max-w-2xl mx-auto">
-              Join thousands of satisfied customers who found the perfect AI tools for their business
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Join thousands of satisfied customers who found the perfect tools for their business
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-surface-800 rounded-xl p-6 border border-surface-700"
+                className="bg-white rounded-xl p-6 border border-gray-200 shadow-lg"
               >
                 <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-md">
                     {testimonial.avatar}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white">{testimonial.name}</h4>
-                    <p className="text-surface-400 text-sm">{testimonial.role} at {testimonial.company}</p>
+                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+                    <p className="text-gray-600 text-sm">{testimonial.role} at {testimonial.company}</p>
                   </div>
                 </div>
-                <p className="text-surface-300 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   "{testimonial.content}"
                 </p>
               </motion.div>
@@ -198,30 +207,30 @@ const Homepage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+<section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12"
+            className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 md:p-12 shadow-2xl"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Get Started?
             </h2>
-            <p className="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses and individuals discovering innovative AI solutions. 
+            <p className="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses and individuals discovering innovative solutions. 
               Start your journey today and transform the way you work.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               <Link to="/browse">
-                <Button variant="secondary" size="xl" className="bg-white text-primary-700 hover:bg-surface-100 px-8 py-4 text-lg">
+                <Button variant="secondary" size="xl" className="bg-white text-blue-700 hover:bg-gray-100 px-8 py-4 text-lg shadow-lg">
                   <ApperIcon name="Search" size={24} className="mr-3" />
                   Start Exploring
                 </Button>
               </Link>
               <Link to="/vendor">
-                <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary-700 px-8 py-4 text-lg">
+                <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg">
                   <ApperIcon name="Plus" size={24} className="mr-3" />
                   Become a Vendor
                 </Button>

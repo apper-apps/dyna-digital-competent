@@ -79,16 +79,16 @@ const AppDetailPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-surface-900">
+<div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="mb-8">
-          <div className="flex items-center space-x-2 text-sm text-surface-400">
-            <Link to="/" className="hover:text-white transition-colors duration-200">Home</Link>
+<div className="flex items-center space-x-2 text-sm text-gray-600">
+            <Link to="/" className="hover:text-blue-600 transition-colors duration-200">Home</Link>
             <ApperIcon name="ChevronRight" size={16} />
-            <Link to="/browse" className="hover:text-white transition-colors duration-200">Browse</Link>
+            <Link to="/browse" className="hover:text-blue-600 transition-colors duration-200">Browse</Link>
             <ApperIcon name="ChevronRight" size={16} />
-            <span className="text-white">{app.name}</span>
+            <span className="text-gray-900 font-medium">{app.name}</span>
           </div>
         </nav>
 
@@ -102,12 +102,12 @@ const AppDetailPage = () => {
           {/* App Info */}
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="w-20 h-20 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center flex-shrink-0">
+<div className="w-20 h-20 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                 <ApperIcon name="Zap" size={40} className="text-white" />
               </div>
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{app.name}</h1>
-                <p className="text-surface-400 text-lg mb-3">by {app.vendor}</p>
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{app.name}</h1>
+                <p className="text-gray-600 text-lg mb-3 font-medium">by {app.vendor}</p>
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center space-x-1">
@@ -124,7 +124,7 @@ const AppDetailPage = () => {
                       {app.rating}
                     </span>
                   </div>
-                  <span className="text-surface-400">({app.reviewCount} reviews)</span>
+<span className="text-gray-600">({app.reviewCount} reviews)</span>
                 </div>
                 <Badge variant="primary" className="mb-4">
                   {app.category}
@@ -132,7 +132,7 @@ const AppDetailPage = () => {
               </div>
             </div>
 
-            <p className="text-surface-300 text-lg leading-relaxed">
+            <p className="text-gray-700 text-lg leading-relaxed">
               {app.description}
             </p>
 
@@ -162,31 +162,31 @@ const AppDetailPage = () => {
           </div>
 
           {/* App Screenshot/Image */}
-          <div className="space-y-4">
-            <div className="aspect-video bg-gradient-to-br from-surface-700 to-surface-600 rounded-xl flex items-center justify-center">
-              <ApperIcon name="Image" size={80} className="text-surface-500" />
+<div className="space-y-4">
+            <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center shadow-inner">
+              <ApperIcon name="Image" size={80} className="text-gray-400" />
             </div>
             <div className="grid grid-cols-4 gap-2">
               {[1, 2, 3, 4].map((_, index) => (
-                <div key={index} className="aspect-square bg-surface-700 rounded-lg flex items-center justify-center">
-                  <ApperIcon name="Image" size={24} className="text-surface-500" />
+                <div key={index} className="aspect-square bg-gray-200 rounded-lg flex items-center justify-center shadow-sm">
+                  <ApperIcon name="Image" size={24} className="text-gray-400" />
                 </div>
               ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Tabs */}
-        <div className="border-b border-surface-700 mb-8">
+{/* Tabs */}
+        <div className="border-b border-gray-200 mb-8 bg-white rounded-t-xl">
           <nav className="flex space-x-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm transition-colors duration-200 ${
+className={`flex items-center space-x-2 py-4 px-4 border-b-2 font-medium text-sm transition-colors duration-200 ${
                   activeTab === tab.id
-                    ? 'border-primary-500 text-primary-400'
-                    : 'border-transparent text-surface-400 hover:text-white hover:border-surface-600'
+                    ? 'border-blue-500 text-blue-600 bg-blue-50'
+                    : 'border-transparent text-gray-600 hover:text-blue-600 hover:border-gray-300 hover:bg-gray-50'
                 }`}
               >
                 <ApperIcon name={tab.icon} size={18} />
@@ -207,32 +207,32 @@ const AppDetailPage = () => {
           {activeTab === "overview" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 space-y-8">
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">About this application</h3>
-                  <div className="prose prose-invert max-w-none">
-                    <p className="text-surface-300 leading-relaxed mb-4">
+<Card className="p-6 bg-white border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">About this application</h3>
+                  <div className="prose max-w-none">
+                    <p className="text-gray-700 leading-relaxed mb-4">
                       {app.description}
                     </p>
-                    <p className="text-surface-300 leading-relaxed mb-4">
-                      This powerful AI application offers cutting-edge features designed to streamline your workflow and boost productivity. 
-                      With advanced machine learning capabilities and an intuitive interface, it's perfect for both beginners and experts.
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      This powerful application offers cutting-edge features designed to streamline your workflow and boost productivity. 
+                      With advanced capabilities and an intuitive interface, it's perfect for both beginners and experts.
                     </p>
-                    <p className="text-surface-300 leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                       Join thousands of satisfied users who have transformed their business processes with this innovative solution. 
-                      Experience the future of AI-powered automation today.
+                      Experience the future of enhanced productivity today.
                     </p>
                   </div>
                 </Card>
 
-                <Card className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Key Features</h3>
+<Card className="p-6 bg-white border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {app.features.map((feature, index) => (
                       <div key={index} className="flex items-center space-x-3">
-                        <div className="w-8 h-8 rounded-lg bg-primary-600/20 flex items-center justify-center flex-shrink-0">
-                          <ApperIcon name="Check" size={16} className="text-primary-400" />
+                        <div className="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0 border border-green-200">
+                          <ApperIcon name="Check" size={16} className="text-green-600" />
                         </div>
-                        <span className="text-surface-300">{feature}</span>
+                        <span className="text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -287,17 +287,17 @@ const AppDetailPage = () => {
           )}
 
           {activeTab === "features" && (
-            <Card className="p-6">
-              <h3 className="text-2xl font-semibold text-white mb-6">Features & Capabilities</h3>
+<Card className="p-6 bg-white border-gray-200">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6">Features & Capabilities</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {app.features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-4 p-4 bg-surface-700 rounded-lg">
-                    <div className="w-10 h-10 rounded-lg bg-primary-600/20 flex items-center justify-center flex-shrink-0">
-                      <ApperIcon name="Zap" size={20} className="text-primary-400" />
+                  <div key={index} className="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg border border-blue-100">
+                    <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 border border-blue-200">
+                      <ApperIcon name="Zap" size={20} className="text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-white mb-2">{feature}</h4>
-                      <p className="text-surface-400 text-sm">
+                      <h4 className="font-medium text-gray-900 mb-2">{feature}</h4>
+                      <p className="text-gray-600 text-sm">
                         Advanced functionality that enhances your workflow and increases productivity.
                       </p>
                     </div>
@@ -310,29 +310,29 @@ const AppDetailPage = () => {
           {activeTab === "pricing" && (
             <div className="space-y-6">
               <div className="text-center">
-                <h3 className="text-2xl font-semibold text-white mb-4">Choose Your Plan</h3>
-                <p className="text-surface-400">Select the plan that best fits your needs</p>
+<h3 className="text-2xl font-semibold text-gray-900 mb-4">Choose Your Plan</h3>
+                <p className="text-gray-600">Select the plan that best fits your needs</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {app.pricing.map((plan, index) => (
-                  <Card key={index} className={`p-6 cursor-pointer transition-all duration-200 ${
-                    selectedPlan === index ? 'border-primary-500 ring-2 ring-primary-500/20' : 'hover:border-surface-600'
+<Card key={index} className={`p-6 cursor-pointer transition-all duration-200 bg-white ${
+                    selectedPlan === index ? 'border-blue-500 ring-2 ring-blue-500/20 shadow-lg' : 'hover:border-gray-300 hover:shadow-md'
                   }`} onClick={() => setSelectedPlan(index)}>
                     <div className="text-center">
-                      <h4 className="text-xl font-semibold text-white mb-2">{plan.name}</h4>
-                      <div className="text-3xl font-bold text-white mb-4">
+                      <h4 className="text-xl font-semibold text-gray-900 mb-2">{plan.name}</h4>
+                      <div className="text-3xl font-bold text-gray-900 mb-4">
                         {formatPrice(plan.price)}
                       </div>
                       <div className="space-y-3 mb-6">
                         {plan.features.map((feature, featureIndex) => (
                           <div key={featureIndex} className="flex items-center space-x-2">
-                            <ApperIcon name="Check" size={16} className="text-success-400" />
-                            <span className="text-surface-300 text-sm">{feature}</span>
+<ApperIcon name="Check" size={16} className="text-green-600" />
+                            <span className="text-gray-700 text-sm">{feature}</span>
                           </div>
                         ))}
                       </div>
                       <Button 
-                        className={`w-full ${selectedPlan === index ? 'bg-primary-600' : ''}`}
+className={`w-full ${selectedPlan === index ? 'bg-blue-600' : ''}`}
                         variant={selectedPlan === index ? "primary" : "secondary"}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -352,7 +352,7 @@ const AppDetailPage = () => {
           {activeTab === "reviews" && (
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <h3 className="text-2xl font-semibold text-white">Customer Reviews</h3>
+<h3 className="text-2xl font-semibold text-gray-900">Customer Reviews</h3>
                 <Button variant="outline">
                   <ApperIcon name="Plus" size={16} className="mr-2" />
                   Write Review
@@ -361,23 +361,23 @@ const AppDetailPage = () => {
               
               {reviews.length === 0 ? (
                 <Card className="p-8 text-center">
-                  <ApperIcon name="MessageSquare" size={48} className="text-surface-600 mx-auto mb-4" />
-                  <h4 className="text-lg font-medium text-white mb-2">No reviews yet</h4>
-                  <p className="text-surface-400">Be the first to review this application</p>
+<ApperIcon name="MessageSquare" size={48} className="text-gray-400 mx-auto mb-4" />
+                  <h4 className="text-lg font-medium text-gray-900 mb-2">No reviews yet</h4>
+                  <p className="text-gray-600">Be the first to review this application</p>
                 </Card>
               ) : (
                 <div className="space-y-4">
                   {reviews.map((review, index) => (
-                    <Card key={review.Id} className="p-6">
+<Card key={review.Id} className="p-6 bg-white border-gray-200">
                       <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0">
                           <span className="text-white font-semibold text-sm">
                             {review.userName.charAt(0).toUpperCase()}
                           </span>
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center space-x-4 mb-2">
-                            <h4 className="font-medium text-white">{review.userName}</h4>
+                            <h4 className="font-medium text-gray-900">{review.userName}</h4>
                             <div className="flex items-center space-x-1">
                               {[...Array(5)].map((_, i) => (
                                 <ApperIcon
@@ -394,10 +394,10 @@ const AppDetailPage = () => {
                               </Badge>
                             )}
                           </div>
-                          <p className="text-surface-300 mb-3">{review.comment}</p>
-                          <div className="flex items-center space-x-4 text-sm text-surface-400">
+<p className="text-gray-700 mb-3">{review.comment}</p>
+                          <div className="flex items-center space-x-4 text-sm text-gray-500">
                             <span>{new Date(review.createdAt).toLocaleDateString()}</span>
-                            <button className="hover:text-white transition-colors duration-200">
+                            <button className="hover:text-blue-600 transition-colors duration-200">
                               Helpful ({review.helpful})
                             </button>
                           </div>

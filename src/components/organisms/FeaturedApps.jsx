@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useCart } from "@/hooks/useCart";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
-import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
 import { appService } from "@/services/api/appService";
-import { useCart } from "@/hooks/useCart";
 
 const FeaturedApps = () => {
   const [apps, setApps] = useState([]);
@@ -57,14 +57,14 @@ const FeaturedApps = () => {
   const currentApp = apps[currentIndex];
 
   return (
-    <section className="py-16">
+<section className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Featured <span className="gradient-text">AI Applications</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Featured <span className="gradient-text">Super Apps</span>
           </h2>
-          <p className="text-surface-400 text-lg max-w-2xl mx-auto">
-            Discover the most popular and innovative AI tools trusted by thousands of users worldwide
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Discover the most popular and innovative tools trusted by thousands of users worldwide
           </p>
         </div>
 
@@ -75,40 +75,40 @@ const FeaturedApps = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="bg-surface-800 rounded-2xl border border-surface-700 overflow-hidden"
+            className="bg-white rounded-2xl border border-gray-200 shadow-xl overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6 md:p-8">
               {/* App Info */}
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                     <ApperIcon name="Zap" size={32} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{currentApp.name}</h3>
-                    <p className="text-surface-400">{currentApp.vendor}</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{currentApp.name}</h3>
+                    <p className="text-gray-600 font-medium">{currentApp.vendor}</p>
                   </div>
                 </div>
 
-                <p className="text-surface-300 text-lg leading-relaxed">
+                <p className="text-gray-700 text-lg leading-relaxed">
                   {currentApp.description}
                 </p>
 
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-1">
-                    <ApperIcon name="Star" size={20} className="text-yellow-400 fill-current" />
-                    <span className="text-white font-semibold">{currentApp.rating}</span>
-                    <span className="text-surface-400">({currentApp.reviewCount} reviews)</span>
+                    <ApperIcon name="Star" size={20} className="text-yellow-500 fill-current" />
+                    <span className="text-gray-900 font-semibold">{currentApp.rating}</span>
+                    <span className="text-gray-600">({currentApp.reviewCount} reviews)</span>
                   </div>
-                  <div className="text-surface-400">•</div>
-                  <span className="text-surface-400">{currentApp.category}</span>
+                  <div className="text-gray-400">•</div>
+                  <span className="text-gray-600 font-medium">{currentApp.category}</span>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+<div className="flex flex-wrap gap-2">
                   {currentApp.tags.slice(0, 4).map((tag, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-surface-700 text-surface-300 rounded-full text-sm"
+                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium border border-blue-200"
                     >
                       {tag}
                     </span>
@@ -116,14 +116,13 @@ const FeaturedApps = () => {
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <div className="text-3xl font-bold text-white">
+                  <div className="text-3xl font-bold text-gray-900">
                     {currentApp.pricing[0]?.price === 0 ? 'Free' : `$${currentApp.pricing[0]?.price}/month`}
                   </div>
                   {currentApp.pricing.length > 1 && (
-                    <span className="text-surface-400">Starting price</span>
+                    <span className="text-gray-600">Starting price</span>
                   )}
                 </div>
-
                 <div className="flex space-x-4">
                   <Link to={`/app/${currentApp.Id}`}>
                     <Button size="lg" className="px-8">
@@ -142,12 +141,12 @@ const FeaturedApps = () => {
                 </div>
               </div>
 
-              {/* App Screenshot/Image */}
+{/* App Screenshot/Image */}
               <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-surface-700 to-surface-600 rounded-xl flex items-center justify-center">
-                  <ApperIcon name="Image" size={64} className="text-surface-500" />
+                <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center shadow-inner">
+                  <ApperIcon name="Image" size={64} className="text-gray-400" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent rounded-xl"></div>
               </div>
             </div>
           </motion.div>
@@ -164,13 +163,13 @@ const FeaturedApps = () => {
               <span>Previous</span>
             </Button>
 
-            <div className="flex space-x-2">
+<div className="flex space-x-2">
               {apps.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                    index === currentIndex ? 'bg-primary-500' : 'bg-surface-600'
+                    index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'
                   }`}
                 />
               ))}

@@ -25,14 +25,14 @@ const AppCard = ({ app, onAddToCart }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4 }}
     >
-      <Card hoverable className="p-6 h-full flex flex-col">
+<Card hoverable className="p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-lg">
         <div className="flex items-start space-x-4 mb-4">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center flex-shrink-0">
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
             <ApperIcon name="Zap" size={24} className="text-white" />
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-white text-lg truncate">{app.name}</h3>
-            <p className="text-surface-400 text-sm">{app.vendor}</p>
+            <h3 className="font-semibold text-gray-900 text-lg truncate">{app.name}</h3>
+            <p className="text-gray-600 text-sm font-medium">{app.vendor}</p>
           </div>
           {app.featured && (
             <Badge variant="primary" className="text-xs">
@@ -41,7 +41,7 @@ const AppCard = ({ app, onAddToCart }) => {
           )}
         </div>
 
-        <p className="text-surface-300 text-sm mb-4 flex-1 line-clamp-3">
+<p className="text-gray-700 text-sm mb-4 flex-1 line-clamp-3">
           {app.description}
         </p>
 
@@ -52,7 +52,7 @@ const AppCard = ({ app, onAddToCart }) => {
               {app.rating}
             </span>
           </div>
-          <span className="text-surface-500 text-sm">
+          <span className="text-gray-500 text-sm">
             ({app.reviewCount} reviews)
           </span>
         </div>
@@ -69,19 +69,19 @@ const AppCard = ({ app, onAddToCart }) => {
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex flex-col">
-            <span className="text-lg font-bold text-white">
+<div className="flex flex-col">
+            <span className="text-lg font-bold text-gray-900">
               {formatPrice(app.pricing[0]?.price || 0)}
             </span>
             {app.pricing.length > 1 && (
-              <span className="text-xs text-surface-400">
+              <span className="text-xs text-gray-500">
                 Starting price
               </span>
             )}
           </div>
           <div className="flex space-x-2">
             <Link to={`/app/${app.Id}`}>
-              <Button variant="ghost" size="sm">
+<Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50">
                 <ApperIcon name="Eye" size={16} className="mr-1" />
                 View
               </Button>

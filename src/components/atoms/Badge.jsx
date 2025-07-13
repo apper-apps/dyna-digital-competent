@@ -7,12 +7,12 @@ const Badge = React.forwardRef(({
   children, 
   ...props 
 }, ref) => {
-  const variants = {
-    default: "bg-surface-800 text-surface-200 border-surface-700",
-    primary: "bg-primary-600/20 text-primary-300 border-primary-600/30",
-    success: "bg-success-600/20 text-success-300 border-success-600/30",
-    warning: "bg-yellow-600/20 text-yellow-300 border-yellow-600/30",
-    error: "bg-red-600/20 text-red-300 border-red-600/30"
+const variants = {
+    default: "bg-gray-100 text-gray-700 border-gray-200",
+    primary: "bg-blue-50 text-blue-700 border-blue-200",
+    success: "bg-green-50 text-green-700 border-green-200",
+    warning: "bg-orange-50 text-orange-700 border-orange-200",
+    error: "bg-red-50 text-red-700 border-red-200"
   };
 
   return (

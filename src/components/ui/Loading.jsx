@@ -23,23 +23,23 @@ const Loading = ({ type = "cards", count = 6 }) => {
             variants={skeletonVariants}
             initial="initial"
             animate="animate"
-            className="bg-surface-800 rounded-xl p-6 border border-surface-700"
+className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm"
           >
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-12 h-12 bg-surface-700 rounded-lg shimmer"></div>
+              <div className="w-12 h-12 bg-gray-200 rounded-lg shimmer"></div>
               <div className="flex-1">
-                <div className="h-4 bg-surface-700 rounded shimmer mb-2"></div>
-                <div className="h-3 bg-surface-700 rounded shimmer w-2/3"></div>
+                <div className="h-4 bg-gray-200 rounded shimmer mb-2"></div>
+                <div className="h-3 bg-gray-200 rounded shimmer w-2/3"></div>
               </div>
             </div>
             <div className="space-y-3">
-              <div className="h-3 bg-surface-700 rounded shimmer"></div>
-              <div className="h-3 bg-surface-700 rounded shimmer w-4/5"></div>
-              <div className="h-3 bg-surface-700 rounded shimmer w-3/5"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer w-4/5"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer w-3/5"></div>
             </div>
             <div className="flex items-center justify-between mt-6">
-              <div className="h-4 bg-surface-700 rounded shimmer w-16"></div>
-              <div className="h-8 bg-surface-700 rounded shimmer w-20"></div>
+              <div className="h-4 bg-gray-200 rounded shimmer w-16"></div>
+              <div className="h-8 bg-gray-200 rounded shimmer w-20"></div>
             </div>
           </motion.div>
         ))}
@@ -55,17 +55,17 @@ const Loading = ({ type = "cards", count = 6 }) => {
         animate="animate"
         className="space-y-8"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="w-full h-96 bg-surface-800 rounded-xl shimmer"></div>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="w-full h-96 bg-gray-200 rounded-xl shimmer"></div>
           <div className="space-y-6">
-            <div className="h-8 bg-surface-800 rounded shimmer"></div>
-            <div className="h-4 bg-surface-800 rounded shimmer w-3/4"></div>
+            <div className="h-8 bg-gray-200 rounded shimmer"></div>
+            <div className="h-4 bg-gray-200 rounded shimmer w-3/4"></div>
             <div className="space-y-2">
-              <div className="h-3 bg-surface-800 rounded shimmer"></div>
-              <div className="h-3 bg-surface-800 rounded shimmer w-5/6"></div>
-              <div className="h-3 bg-surface-800 rounded shimmer w-4/5"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer w-5/6"></div>
+              <div className="h-3 bg-gray-200 rounded shimmer w-4/5"></div>
             </div>
-            <div className="h-12 bg-surface-800 rounded shimmer w-32"></div>
+            <div className="h-12 bg-gray-200 rounded shimmer w-32"></div>
           </div>
         </div>
       </motion.div>
@@ -80,7 +80,7 @@ const Loading = ({ type = "cards", count = 6 }) => {
           variants={skeletonVariants}
           initial="initial"
           animate="animate"
-          className="h-4 bg-surface-800 rounded shimmer"
+className="h-4 bg-gray-200 rounded shimmer"
           style={{ width: `${Math.random() * 40 + 60}%` }}
         />
       ))}

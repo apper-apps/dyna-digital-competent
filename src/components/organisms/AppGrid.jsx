@@ -137,10 +137,10 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
   if (error) return <Error message={error} onRetry={loadApps} />;
 
   return (
-    <div className="space-y-6">
+<div className="space-y-6">
       {/* Results Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-        <div className="text-surface-300">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="text-gray-600">
           {apps.length === 0 ? (
             "No applications found"
           ) : (
@@ -151,11 +151,11 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
         </div>
         
         <div className="flex items-center space-x-4">
-          <label className="text-surface-300 text-sm">Sort by:</label>
+          <label className="text-gray-600 text-sm font-medium">Sort by:</label>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-surface-800 border border-surface-700 text-white rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+            className="bg-white border border-gray-300 text-gray-900 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
           >
             {sortOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -175,9 +175,9 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
           onAction={() => window.location.reload()}
         />
       ) : (
-        <>
+<>
           <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
             initial="hidden"
             animate="visible"
             variants={{
@@ -204,17 +204,17 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
             ))}
           </motion.div>
 
-          {/* Pagination */}
+{/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex items-center justify-center space-x-2 mt-12">
+            <div className="flex flex-wrap items-center justify-center gap-2 mt-12 p-4">
               <Button
                 variant="ghost"
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
+                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50"
               >
                 <ApperIcon name="ChevronLeft" size={18} />
               </Button>
-              
               {[...Array(totalPages)].map((_, index) => {
                 const page = index + 1;
                 const isCurrentPage = page === currentPage;
@@ -231,10 +231,11 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
                 );
               })}
               
-              <Button
+<Button
                 variant="ghost"
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
+                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50"
               >
                 <ApperIcon name="ChevronRight" size={18} />
               </Button>
