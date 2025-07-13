@@ -77,20 +77,20 @@ return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Page Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Browse <span className="gradient-text">Super Applications</span>
+<div className="mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+            Explore <span className="gradient-text">AI Applications</span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl">
-            Discover innovative tools and solutions from verified vendors. Filter by category, price, rating, and features to find exactly what you need.
+          <p className="text-gray-600 text-lg max-w-2xl leading-relaxed">
+            Discover innovative AI-powered tools and intelligent solutions from verified vendors. Filter by category, features, and ratings to find the perfect applications for your needs.
           </p>
         </div>
 
         {/* Search Bar */}
         <div className="mb-8">
-          <SearchBar 
+<SearchBar 
             onSearch={handleSearch}
-            placeholder="Search applications, vendors, or features..."
+            placeholder="Search AI applications, vendors, or capabilities..."
             className="max-w-2xl"
           />
         </div>

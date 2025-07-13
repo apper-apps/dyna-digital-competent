@@ -15,10 +15,9 @@ const Header = () => {
 
   const cartItemCount = items.reduce((total, item) => total + item.quantity, 0);
 
-  const navigation = [
+const navigation = [
     { name: "Browse", href: "/browse" },
     { name: "Categories", href: "/categories" },
-    { name: "For Vendors", href: "/vendor" },
     { name: "Pricing", href: "/pricing" },
     { name: "Support", href: "/support" }
   ];
@@ -65,34 +64,9 @@ const Header = () => {
               className="hidden sm:flex text-gray-600 hover:text-blue-600 hover:bg-blue-50"
             >
               <ApperIcon name="Search" size={20} />
-            </Button>
+</Button>
 
-            {/* Cart */}
-            <div className="relative">
-<Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsCartOpen(!isCartOpen)}
-                className="relative text-gray-600 hover:text-blue-600 hover:bg-blue-50"
-              >
-                <ApperIcon name="ShoppingCart" size={20} />
-                {cartItemCount > 0 && (
-                  <Badge 
-                    variant="primary" 
-                    className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center text-xs"
-                  >
-                    {cartItemCount}
-                  </Badge>
-                )}
-              </Button>
-              <CartDropdown
-                items={items}
-                isOpen={isCartOpen}
-                onClose={() => setIsCartOpen(false)}
-                onRemoveItem={removeItem}
-                onClearCart={clearCart}
-              />
-            </div>
+            {/* User Menu */}
 
             {/* User Menu */}
 <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50">

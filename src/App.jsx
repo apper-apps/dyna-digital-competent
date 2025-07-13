@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 // Pages
 import Homepage from '@/components/pages/Homepage';
 import BrowsePage from '@/components/pages/BrowsePage';
+import CategoryPage from '@/components/pages/CategoryPage';
 import AppDetailPage from '@/components/pages/AppDetailPage';
 import VendorPage from '@/components/pages/VendorPage';
 import PricingPage from '@/components/pages/PricingPage';
@@ -23,10 +24,10 @@ return (
         <Header />
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<Homepage />} />
+<Route path="/" element={<Homepage />} />
             <Route path="/browse" element={<BrowsePage />} />
             <Route path="/app/:id" element={<AppDetailPage />} />
-            <Route path="/categories" element={<BrowsePage />} />
+            <Route path="/categories" element={<CategoryPage />} />
             <Route path="/vendor" element={<VendorPage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/support" element={<SupportPage />} />

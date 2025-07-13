@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import SearchBar from "@/components/molecules/SearchBar";
-import CategoryCard from "@/components/molecules/CategoryCard";
+import React from "react";
+import ApperIcon from "@/components/ApperIcon";
 import FeaturedApps from "@/components/organisms/FeaturedApps";
 import Button from "@/components/atoms/Button";
-import ApperIcon from "@/components/ApperIcon";
+import CategoryCard from "@/components/molecules/CategoryCard";
+import SearchBar from "@/components/molecules/SearchBar";
 import { categoriesData } from "@/services/mockData/categories";
 
 const Homepage = () => {
@@ -53,28 +54,28 @@ const testimonials = [
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8"
+className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 tracking-tight"
           >
             Discover Amazing{" "}
-            <span className="gradient-text">Super Apps</span>
+            <span className="gradient-text">AI Applications</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-600 mb-4 max-w-4xl mx-auto leading-relaxed font-medium"
           >
-            Featuring apps like Slack, Notion, Figma, GitHub, Discord, and hundreds more
+            Featuring AI-powered apps like ChatGPT, Midjourney, Notion AI, GitHub Copilot, and hundreds more intelligent tools
           </motion.p>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            The ultimate marketplace for productivity, development, design, and business tools. Discover apps from leading companies like Microsoft, Google, Adobe, and emerging startups.
-          </motion.p>
+            The premier marketplace connecting you with cutting-edge AI applications. Explore automation, creativity, productivity, and business intelligence tools from industry leaders and innovative startups.
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -91,16 +92,16 @@ className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
           >
-            <Link to="/browse">
-              <Button size="xl" className="px-8 py-4 text-lg">
+<Link to="/browse">
+              <Button size="xl" className="px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl">
                 <ApperIcon name="Search" size={24} className="mr-3" />
-                Browse Applications
+                Explore AI Apps
               </Button>
             </Link>
-            <Link to="/vendor">
-              <Button variant="outline" size="xl" className="px-8 py-4 text-lg">
-                <ApperIcon name="Plus" size={24} className="mr-3" />
-                Sell Your App
+            <Link to="/categories">
+              <Button variant="outline" size="xl" className="px-8 py-4 text-lg font-semibold border-2">
+                <ApperIcon name="Grid3X3" size={24} className="mr-3" />
+                Browse Categories
               </Button>
             </Link>
           </motion.div>
@@ -222,16 +223,16 @@ className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
               Start your journey today and transform the way you work.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link to="/browse">
-                <Button variant="secondary" size="xl" className="bg-white text-blue-700 hover:bg-gray-100 px-8 py-4 text-lg shadow-lg">
+<Link to="/browse">
+                <Button variant="secondary" size="xl" className="bg-white text-blue-700 hover:bg-gray-100 px-8 py-4 text-lg shadow-lg font-semibold">
                   <ApperIcon name="Search" size={24} className="mr-3" />
-                  Start Exploring
+                  Explore AI Apps
                 </Button>
               </Link>
-              <Link to="/vendor">
-                <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg">
-                  <ApperIcon name="Plus" size={24} className="mr-3" />
-                  Become a Vendor
+              <Link to="/categories">
+                <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-blue-700 px-8 py-4 text-lg font-semibold">
+                  <ApperIcon name="Grid3X3" size={24} className="mr-3" />
+                  Browse Categories
                 </Button>
               </Link>
             </div>

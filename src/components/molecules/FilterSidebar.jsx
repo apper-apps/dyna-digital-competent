@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import React from "react";
 import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
 import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
 
 const FilterSidebar = ({ 
   filters, 
@@ -37,20 +38,20 @@ const FilterSidebar = ({
       )}
       
       {/* Sidebar */}
-      <motion.div
+<motion.div
         initial={{ x: -300 }}
         animate={{ x: isOpen ? 0 : -300 }}
         transition={{ duration: 0.3 }}
-        className="fixed lg:static inset-y-0 left-0 z-50 w-80 bg-surface-800 border-r border-surface-700 p-6 overflow-y-auto lg:block"
+        className="fixed lg:static inset-y-0 left-0 z-50 w-80 bg-white border-r border-gray-200 p-6 overflow-y-auto lg:block shadow-lg lg:shadow-none"
       >
         <div className="flex items-center justify-between mb-6 lg:mb-8">
-          <h2 className="text-xl font-bold text-white">Filters</h2>
+          <h2 className="text-xl font-bold text-gray-900">Filters</h2>
           <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={onClearFilters}
-              className="text-surface-400 hover:text-white"
+              className="text-gray-600 hover:text-gray-900"
             >
               Clear All
             </Button>
@@ -58,7 +59,7 @@ const FilterSidebar = ({
               variant="ghost"
               size="sm"
               onClick={onClose}
-              className="lg:hidden"
+              className="lg:hidden text-gray-600 hover:text-gray-900"
             >
               <ApperIcon name="X" size={20} />
             </Button>
@@ -66,9 +67,8 @@ const FilterSidebar = ({
         </div>
 
         <div className="space-y-8">
-          {/* Categories */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Categories</h3>
+<div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
             <div className="space-y-2">
               {categories.map((category) => (
                 <label key={category.name} className="flex items-center space-x-3 cursor-pointer group">
@@ -81,22 +81,21 @@ const FilterSidebar = ({
                         : (filters.categories || []).filter(c => c !== category.name);
                       onFilterChange({ ...filters, categories: newCategories });
                     }}
-                    className="w-4 h-4 text-primary-600 bg-surface-700 border-surface-600 rounded focus:ring-primary-500 focus:ring-2"
+                    className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                   />
-                  <span className="text-surface-300 group-hover:text-white transition-colors duration-200">
+                  <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
                     {category.name}
                   </span>
-                  <Badge variant="default" className="ml-auto text-xs">
+                  <Badge variant="default" className="ml-auto text-xs bg-gray-100 text-gray-700">
                     {category.appCount}
                   </Badge>
                 </label>
               ))}
             </div>
           </div>
-
-          {/* Price Range */}
+{/* Price Range */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Price Range</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Price Range</h3>
             <div className="space-y-2">
               {priceRanges.map((range) => (
                 <label key={range.value} className="flex items-center space-x-3 cursor-pointer group">
@@ -106,9 +105,9 @@ const FilterSidebar = ({
                     value={range.value}
                     checked={filters.priceRange === range.value}
                     onChange={(e) => onFilterChange({ ...filters, priceRange: e.target.value })}
-                    className="w-4 h-4 text-primary-600 bg-surface-700 border-surface-600 focus:ring-primary-500 focus:ring-2"
+                    className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-500 focus:ring-2"
                   />
-                  <span className="text-surface-300 group-hover:text-white transition-colors duration-200">
+                  <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
                     {range.label}
                   </span>
                 </label>
@@ -118,8 +117,8 @@ const FilterSidebar = ({
 
           {/* Rating */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Minimum Rating</h3>
-            <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Minimum Rating</h3>
+<div className="space-y-2">
               {ratings.map((rating) => (
                 <label key={rating.value} className="flex items-center space-x-3 cursor-pointer group">
                   <input
@@ -128,7 +127,7 @@ const FilterSidebar = ({
                     value={rating.value}
                     checked={filters.rating === rating.value}
                     onChange={(e) => onFilterChange({ ...filters, rating: parseInt(e.target.value) })}
-                    className="w-4 h-4 text-primary-600 bg-surface-700 border-surface-600 focus:ring-primary-500 focus:ring-2"
+                    className="w-4 h-4 text-blue-600 bg-white border-gray-300 focus:ring-blue-500 focus:ring-2"
                   />
                   <div className="flex items-center space-x-1">
                     {[...Array(5)].map((_, i) => (
@@ -136,21 +135,20 @@ const FilterSidebar = ({
                         key={i}
                         name="Star"
                         size={14}
-                        className={`${i < rating.value ? 'text-yellow-400 fill-current' : 'text-surface-600'}`}
+                        className={`${i < rating.value ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
                       />
                     ))}
                   </div>
-                  <span className="text-surface-300 group-hover:text-white transition-colors duration-200">
+                  <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
                     & up
                   </span>
                 </label>
               ))}
             </div>
           </div>
-
-          {/* Features */}
+{/* Features */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Features</h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Features</h3>
             <div className="space-y-2">
               {["API Available", "Free Trial", "Mobile App", "24/7 Support", "Custom Integration"].map((feature) => (
                 <label key={feature} className="flex items-center space-x-3 cursor-pointer group">
@@ -163,19 +161,18 @@ const FilterSidebar = ({
                         : (filters.features || []).filter(f => f !== feature);
                       onFilterChange({ ...filters, features: newFeatures });
                     }}
-                    className="w-4 h-4 text-primary-600 bg-surface-700 border-surface-600 rounded focus:ring-primary-500 focus:ring-2"
+                    className="w-4 h-4 text-blue-600 bg-white border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
                   />
-                  <span className="text-surface-300 group-hover:text-white transition-colors duration-200">
+                  <span className="text-gray-700 group-hover:text-gray-900 transition-colors duration-200">
                     {feature}
                   </span>
                 </label>
               ))}
             </div>
           </div>
-        </div>
+</div>
       </motion.div>
     </>
   );
 };
-
 export default FilterSidebar;
