@@ -38,8 +38,8 @@ const Footer = () => {
 
 return (
     <footer className="bg-gray-50 border-t border-gray-200 mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Logo and Description */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center space-x-3 mb-4">
@@ -66,10 +66,11 @@ return (
                 </a>
               ))}
             </div>
-          </div>
+</div>
 
           {/* Footer Links */}
-{Object.entries(footerLinks).map(([category, links]) => (
+          <div className="sm:col-span-1 lg:col-span-4 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
               <h3 className="font-semibold text-gray-900 mb-4">{category}</h3>
               <ul className="space-y-3">
@@ -83,14 +84,15 @@ return (
                     </Link>
                   </li>
                 ))}
-              </ul>
+</ul>
             </div>
-          ))}
+            ))}
+          </div>
         </div>
 
 <div className="border-t border-gray-200 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="flex items-center space-x-6 text-sm text-gray-600 mb-4 md:mb-0">
+          <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+            <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600">
               <Link to="/privacy" className="hover:text-blue-600 transition-colors duration-200">
                 Privacy Policy
               </Link>
@@ -101,7 +103,7 @@ return (
                 Cookie Policy
               </Link>
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 text-center sm:text-right">
               © 2024 Navigator. All rights reserved.
             </div>
           </div>

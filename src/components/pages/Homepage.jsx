@@ -5,13 +5,9 @@ import ApperIcon from "@/components/ApperIcon";
 import FeaturedApps from "@/components/organisms/FeaturedApps";
 import Button from "@/components/atoms/Button";
 import CategoryCard from "@/components/molecules/CategoryCard";
-import SearchBar from "@/components/molecules/SearchBar";
 import { categoriesData } from "@/services/mockData/categories";
 
 const Homepage = () => {
-  const handleSearch = (query) => {
-    window.location.href = `/browse?search=${encodeURIComponent(query)}`;
-  };
 
   const stats = [
     { label: "AI Applications", value: "500+", icon: "Zap" },
@@ -76,22 +72,12 @@ className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 trackin
             className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             The premier marketplace connecting you with cutting-edge AI applications. Explore automation, creativity, productivity, and business intelligence tools from industry leaders and innovative startups.
-          </motion.p>
-
-          <motion.div
+</motion.p>
+<motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="max-w-2xl mx-auto mb-12"
-          >
-            <SearchBar onSearch={handleSearch} />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+            className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mt-12"
           >
 <Link to="/browse">
               <Button size="xl" className="px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl">

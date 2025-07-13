@@ -57,8 +57,9 @@ primary: {
           900: '#111827',
         }
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+fontFamily: {
+        sans: ['Jost', 'Open Sans', 'Inter', 'system-ui', 'sans-serif'],
+        heading: ['Jost', 'Open Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'shimmer': 'shimmer 2s linear infinite',
