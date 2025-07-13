@@ -136,26 +136,29 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
   if (loading) return <Loading type="cards" count={itemsPerPage} />;
   if (error) return <Error message={error} onRetry={loadApps} />;
 
-  return (
-<div className="space-y-6">
+return (
+    <div className="space-y-4 sm:space-y-6">
       {/* Results Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
-        <div className="text-gray-600">
+      <div className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-gray-50 rounded-xl border border-gray-200">
+        <div className="text-gray-600 text-sm sm:text-base">
           {apps.length === 0 ? (
             "No applications found"
           ) : (
             <>
-              Showing {((currentPage - 1) * itemsPerPage) + 1}-{Math.min(currentPage * itemsPerPage, apps.length)} of {apps.length} applications
+              <span className="block sm:inline">
+                Showing {((currentPage - 1) * itemsPerPage) + 1}-{Math.min(currentPage * itemsPerPage, apps.length)} of {apps.length}
+              </span>
+              <span className="block sm:inline sm:ml-1">applications</span>
             </>
           )}
         </div>
         
-        <div className="flex items-center space-x-4">
+        <div className="flex flex-col space-y-2 sm:space-y-0 sm:flex-row sm:items-center sm:space-x-3">
           <label className="text-gray-600 text-sm font-medium">Sort by:</label>
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-white border border-gray-300 text-gray-900 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm"
+            className="bg-white border border-gray-300 text-gray-900 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm w-full sm:w-auto"
           >
             {sortOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -175,9 +178,9 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
           onAction={() => window.location.reload()}
         />
       ) : (
-<>
+        <>
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6"
             initial="hidden"
             animate="visible"
             variants={{
@@ -206,38 +209,60 @@ const AppGrid = ({ filters = {}, searchQuery = "" }) => {
 
 {/* Pagination */}
           {totalPages > 1 && (
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-12 p-4">
+            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2 mt-8 sm:mt-12 p-3 sm:p-4">
               <Button
                 variant="ghost"
                 onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                 disabled={currentPage === 1}
-                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50 min-h-[36px] px-2 sm:px-3"
               >
-                <ApperIcon name="ChevronLeft" size={18} />
+                <ApperIcon name="ChevronLeft" size={16} className="sm:w-[18px] sm:h-[18px]" />
+                <span className="sr-only sm:not-sr-only sm:ml-1 text-sm">Prev</span>
               </Button>
+              
+              {/* Page Numbers - Show fewer on mobile */}
               {[...Array(totalPages)].map((_, index) => {
                 const page = index + 1;
                 const isCurrentPage = page === currentPage;
+                
+                // Show current page and 2 pages around it on mobile
+                const shouldShow = totalPages <= 5 || 
+                  page === 1 || 
+                  page === totalPages || 
+                  Math.abs(page - currentPage) <= 1;
+                
+                if (!shouldShow) {
+                  // Show ellipsis for gaps
+                  if ((page === currentPage - 2 || page === currentPage + 2) && totalPages > 5) {
+                    return (
+                      <span key={page} className="text-gray-400 px-1 hidden sm:inline">
+                        ...
+                      </span>
+                    );
+                  }
+                  return null;
+                }
                 
                 return (
                   <Button
                     key={page}
                     variant={isCurrentPage ? "primary" : "ghost"}
                     onClick={() => setCurrentPage(page)}
-                    className="w-10 h-10"
+                    className={`w-8 h-8 sm:w-10 sm:h-10 text-sm ${isCurrentPage ? 'min-h-[32px] sm:min-h-[40px]' : 'min-h-[32px] sm:min-h-[40px]'}`}
                   >
                     {page}
                   </Button>
                 );
               })}
               
-<Button
+              <Button
                 variant="ghost"
                 onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                 disabled={currentPage === totalPages}
-                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                className="text-gray-600 hover:text-blue-600 hover:bg-blue-50 min-h-[36px] px-2 sm:px-3"
               >
-                <ApperIcon name="ChevronRight" size={18} />
+                <span className="sr-only sm:not-sr-only sm:mr-1 text-sm">Next</span>
+                <ApperIcon name="ChevronRight" size={16} className="sm:w-[18px] sm:h-[18px]" />
               </Button>
             </div>
           )}

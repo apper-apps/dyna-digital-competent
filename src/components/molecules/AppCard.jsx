@@ -90,52 +90,51 @@ const AppCard = ({ app, onAddToCart }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4 }}
     >
-<Card hoverable className="p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300">
-        <div className="flex items-start space-x-4 mb-4">
-          <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} hover:scale-105 transition-transform duration-200`}>
-            <ApperIcon name={logoConfig.icon} size={26} className="text-white drop-shadow-sm" />
+<Card hoverable className="p-4 sm:p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300">
+        <div className="flex items-start space-x-3 sm:space-x-4 mb-4">
+          <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} hover:scale-105 transition-transform duration-200`}>
+            <ApperIcon name={logoConfig.icon} size={22} className="text-white drop-shadow-sm sm:w-6 sm:h-6" />
           </div>
-          <div className="flex-1 min-w-0">
-            <h3 className="font-semibold text-gray-900 text-lg truncate">{app.name}</h3>
-            <p className="text-gray-600 text-sm font-medium">{app.vendor}</p>
+          <div className="flex-1 min-w-0 pr-2">
+            <h3 className="font-semibold text-gray-900 text-base sm:text-lg leading-tight mb-1 break-words hyphens-auto">{app.name}</h3>
+            <p className="text-gray-600 text-xs sm:text-sm font-medium truncate">{app.vendor}</p>
           </div>
           {app.featured && (
-            <Badge variant="primary" className="text-xs">
+            <Badge variant="primary" className="text-xs flex-shrink-0">
               Featured
             </Badge>
           )}
         </div>
 
-<p className="text-gray-700 text-sm mb-4 flex-1 line-clamp-3">
+        <p className="text-gray-700 text-xs sm:text-sm mb-4 flex-1 line-clamp-3 leading-relaxed">
           {app.description}
         </p>
 
-        <div className="flex items-center space-x-2 mb-4">
+        <div className="flex items-center space-x-2 mb-4 text-xs sm:text-sm">
           <div className="flex items-center space-x-1">
-            <ApperIcon name="Star" size={16} className={`fill-current ${getRatingColor(app.rating)}`} />
-            <span className={`text-sm font-medium ${getRatingColor(app.rating)}`}>
+            <ApperIcon name="Star" size={14} className={`fill-current ${getRatingColor(app.rating)} sm:w-4 sm:h-4`} />
+            <span className={`font-medium ${getRatingColor(app.rating)}`}>
               {app.rating}
             </span>
           </div>
-          <span className="text-gray-500 text-sm">
+          <span className="text-gray-500 truncate">
             ({app.reviewCount} reviews)
           </span>
         </div>
 
-        <div className="flex items-center space-x-2 mb-4">
-          <Badge variant="default" className="text-xs">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4">
+          <Badge variant="default" className="text-xs flex-shrink-0">
             {app.category}
           </Badge>
           {app.tags.slice(0, 2).map((tag, index) => (
-            <Badge key={index} variant="default" className="text-xs">
+            <Badge key={index} variant="default" className="text-xs flex-shrink-0 max-w-20 sm:max-w-none truncate">
               {tag}
             </Badge>
           ))}
         </div>
-
-        <div className="flex items-center justify-between">
-<div className="flex flex-col">
-            <span className="text-lg font-bold text-gray-900">
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+          <div className="flex flex-col">
+            <span className="text-base sm:text-lg font-bold text-gray-900">
               {formatPrice(app.pricing[0]?.price || 0)}
             </span>
             {app.pricing.length > 1 && (
@@ -146,17 +145,18 @@ const AppCard = ({ app, onAddToCart }) => {
           </div>
           <div className="flex space-x-2">
             <Link to={`/app/${app.Id}`}>
-<Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50">
-                <ApperIcon name="Eye" size={16} className="mr-1" />
-                View
+              <Button variant="ghost" size="sm" className="text-gray-600 hover:text-blue-600 hover:bg-blue-50 min-h-[36px] px-3">
+                <ApperIcon name="Eye" size={14} className="mr-1 sm:mr-1.5" />
+                <span className="text-xs sm:text-sm">View</span>
               </Button>
             </Link>
             <Button 
               size="sm"
               onClick={() => onAddToCart(app)}
+              className="min-h-[36px] px-3"
             >
-              <ApperIcon name="Plus" size={16} className="mr-1" />
-              Add
+              <ApperIcon name="Plus" size={14} className="mr-1 sm:mr-1.5" />
+              <span className="text-xs sm:text-sm">Add</span>
             </Button>
           </div>
         </div>
