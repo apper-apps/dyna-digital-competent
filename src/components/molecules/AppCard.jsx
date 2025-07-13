@@ -18,6 +18,71 @@ const AppCard = ({ app, onAddToCart }) => {
     return "text-red-400";
   };
 
+  const getAppLogo = (category, appName) => {
+    const logoConfig = {
+      "AI Automation": {
+        gradient: "from-blue-500 via-blue-600 to-indigo-600",
+        icon: "Zap",
+        shadow: "shadow-blue-500/25"
+      },
+      "Business Growth": {
+        gradient: "from-green-500 via-emerald-600 to-teal-600",
+        icon: "TrendingUp",
+        shadow: "shadow-green-500/25"
+      },
+      "Creative Tools": {
+        gradient: "from-purple-500 via-violet-600 to-purple-700",
+        icon: "Palette",
+        shadow: "shadow-purple-500/25"
+      },
+      "Development": {
+        gradient: "from-orange-500 via-amber-600 to-yellow-600",
+        icon: "Code",
+        shadow: "shadow-orange-500/25"
+      },
+      "Health & Wellness": {
+        gradient: "from-pink-500 via-rose-600 to-red-500",
+        icon: "Heart",
+        shadow: "shadow-pink-500/25"
+      },
+      "Finance": {
+        gradient: "from-yellow-500 via-amber-600 to-orange-600",
+        icon: "DollarSign",
+        shadow: "shadow-yellow-500/25"
+      },
+      "Education": {
+        gradient: "from-indigo-500 via-blue-600 to-cyan-600",
+        icon: "BookOpen",
+        shadow: "shadow-indigo-500/25"
+      },
+      "Personal Lifestyle": {
+        gradient: "from-cyan-500 via-teal-600 to-blue-600",
+        icon: "User",
+        shadow: "shadow-cyan-500/25"
+      }
+    };
+
+    const config = logoConfig[category] || logoConfig["AI Automation"];
+    
+    // Special icons for specific apps
+    if (appName?.includes("Content")) config.icon = "Edit3";
+    if (appName?.includes("Chat") || appName?.includes("Assistant")) config.icon = "MessageCircle";
+    if (appName?.includes("Data") || appName?.includes("Analytics")) config.icon = "BarChart3";
+    if (appName?.includes("Code")) config.icon = "Terminal";
+    if (appName?.includes("Voice") || appName?.includes("Speech")) config.icon = "Mic";
+    if (appName?.includes("Image") || appName?.includes("Photo")) config.icon = "Image";
+    if (appName?.includes("Health") || appName?.includes("Wellness")) config.icon = "Activity";
+    if (appName?.includes("Finance") || appName?.includes("Money")) config.icon = "CreditCard";
+    if (appName?.includes("Learn") || appName?.includes("Education")) config.icon = "GraduationCap";
+    if (appName?.includes("Email")) config.icon = "Mail";
+    if (appName?.includes("Design")) config.icon = "Brush";
+    if (appName?.includes("Productivity") || appName?.includes("Task")) config.icon = "CheckSquare";
+
+    return config;
+  };
+
+  const logoConfig = getAppLogo(app.category, app.name);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -25,10 +90,10 @@ const AppCard = ({ app, onAddToCart }) => {
       transition={{ duration: 0.5 }}
       whileHover={{ y: -4 }}
     >
-<Card hoverable className="p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-lg">
+<Card hoverable className="p-6 h-full flex flex-col bg-white border-gray-200 shadow-sm hover:shadow-xl hover:shadow-gray-200/50 transition-all duration-300">
         <div className="flex items-start space-x-4 mb-4">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-md">
-            <ApperIcon name="Zap" size={24} className="text-white" />
+          <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${logoConfig.gradient} flex items-center justify-center flex-shrink-0 shadow-lg ${logoConfig.shadow} hover:scale-105 transition-transform duration-200`}>
+            <ApperIcon name={logoConfig.icon} size={26} className="text-white drop-shadow-sm" />
           </div>
           <div className="flex-1 min-w-0">
             <h3 className="font-semibold text-gray-900 text-lg truncate">{app.name}</h3>

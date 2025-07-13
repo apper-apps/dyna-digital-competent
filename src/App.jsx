@@ -12,6 +12,7 @@ import PricingPage from '@/components/pages/PricingPage';
 import SupportPage from '@/components/pages/SupportPage';
 import CartPage from '@/components/pages/CartPage';
 import CheckoutPage from '@/components/pages/CheckoutPage';
+import GetFundingPage from '@/components/pages/GetFundingPage';
 
 // Layout Components
 import Header from '@/components/organisms/Header';
@@ -33,6 +34,7 @@ return (
             <Route path="/support" element={<SupportPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/get-funding" element={<GetFundingPage />} />
           </Routes>
         </main>
         <Footer />

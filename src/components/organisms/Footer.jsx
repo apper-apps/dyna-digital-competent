@@ -9,11 +9,11 @@ const Footer = () => {
       { name: "Featured", href: "/featured" },
       { name: "New Releases", href: "/new" }
     ],
-    "For Vendors": [
-      { name: "Sell Your App", href: "/vendor/register" },
+"For Vendors": [
+      { name: "List Your App", href: "/vendor/register" },
       { name: "Vendor Dashboard", href: "/vendor/dashboard" },
       { name: "Developer Resources", href: "/vendor/resources" },
-      { name: "API Documentation", href: "/vendor/api" }
+      { name: "Get Funding", href: "/get-funding" }
     ],
     "Support": [
       { name: "Help Center", href: "/support" },
